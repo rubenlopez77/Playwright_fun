@@ -1,6 +1,6 @@
 import { expect, Page, Locator } from '@playwright/test';
 import { Menu, MenuOptions } from '../helpers/menu';
-import { Wait } from '../helpers/waithelper'
+//import { Wait } from '../helpers/waithelper'
 
 export class User {
   private page: Page;
@@ -23,9 +23,9 @@ export class User {
     const menu = new Menu(this.page);
     await menu.goMenu(MenuOptions.Login);
 
-    const wait = new Wait(this.page);
-    await wait.forVisible('#logInModal');
-
+    //const wait = new Wait(this.page);
+    //await wait.forVisible('#logInModal');
+    await expect(this.page.locator('#logInModal')).toBeVisible();
     
     const loginModal = await this.page.locator('#logInModal');
 
@@ -47,13 +47,12 @@ export class User {
     if (success){
       await loginModal.locator('button', { hasText: 'Log in' }).click();
       
-   const wait = new Wait(this.page);
-    await wait.forVisible('#nameofuser');
+
 
      const userElement = await this.page.locator('#nameofuser');
 
     // Espera explicita
-      await expect(userElement).toHaveText(`Welcome ${user}`, {});
+      await expect(userElement).toHaveText(`Welcome ${user}`);
 
     } else {
         await this.page.waitForTimeout(4000); 
@@ -81,7 +80,8 @@ export class User {
 
       const loginModal = this.page.locator('#logInModal');
       await loginModal.locator('button.btn-secondary').click();
-      //await expect(loginModal.locator('#logInModal')).toBeHidden(); 
+      await expect(this.page.locator('#logInModal')).toBeHidden();
+
     }
   }
     /// <summary>
