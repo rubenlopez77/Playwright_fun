@@ -1,6 +1,6 @@
 import { expect, Page, Locator } from '@playwright/test';
 import { ToolsTexts } from '../tools/texts';
-import { ToolsDebug } from '../tools/debug';
+
 
 
 export enum MenuOptions {
