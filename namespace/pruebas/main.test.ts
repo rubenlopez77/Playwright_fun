@@ -1,9 +1,7 @@
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { Home } from '../helpers/home';
 import { Category, Categories } from '../helpers/category';
-import { Menu, MenuOptions } from '../helpers/menu';
-
-
+import { Menu } from '../helpers/menu';
 
 let home: Home;
 
@@ -21,8 +19,6 @@ test('landing', async ({ page }) => {
 
   await expect(page.locator('link[rel="icon"][sizes="32x32"]')).toHaveAttribute('href', 'blazemeter-favicon-32x32.png');
   
-
-
   const response = await page.request.get(`${new URL(page.url()).origin}/blazemeter-favicon-32x32.png`);
   console.log(response.status());
   expect(response.ok()).toBeTruthy();
@@ -37,7 +33,6 @@ test('landing', async ({ page }) => {
 });
 
 test('has categories', async ({ page }) => {
-
 
   const categories = new Categories(page);
   await categories.validateCategories();  

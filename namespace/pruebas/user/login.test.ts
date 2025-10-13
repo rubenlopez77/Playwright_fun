@@ -1,4 +1,4 @@
-import { test, expect, Page } from '@playwright/test';
+import { test } from '@playwright/test';
 import { Home } from '../../helpers/home'
 import { User } from '../../helpers/login'
 import env from '../../tools/env';
