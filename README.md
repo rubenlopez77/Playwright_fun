@@ -3,6 +3,7 @@
 
 Proyecto personal para experimentar con **Playwright + TypeScript**, con el objetivo de replicar la flexibilidad que tenía con Selenium, y explorar nuevas posibilidades.
 
+[![Playwright Tests](https://github.com/rubenlopez77/Playwright_fun/actions/workflows/playwright.yml/badge.svg)](https://github.com/rubenlopez77/Playwright_fun/actions/workflows/playwright.yml)
 ---
 
 ## 📁 Estructura del proyecto
