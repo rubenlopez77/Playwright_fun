@@ -4,7 +4,7 @@ import path from 'path';
 
 type EnvVars = {
   BASE_URL: string;
-  USER: string;
+  LOGIN: string;
   PASS: string;
 };
 
@@ -16,7 +16,7 @@ dotenv.config({ path: envFile });
 
 const envVars: EnvVars = {
   BASE_URL: process.env.BASE_URL || '',
-  USER: process.env.USER || '',
+  LOGIN: process.env.LOGIN || '',
   PASS: process.env.PASS || ''
 };
 

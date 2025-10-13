@@ -30,7 +30,7 @@ test.describe('Login flow -> ', () => {
   test('should login successfully and then logout', async ({ page }) => {
 
     const user = new User(page);
-    await user.doLogin("admin","admin");
+    await user.doLogin(env.LOGIN,env.PASS);
 
     await user.doLogOut();
   });
